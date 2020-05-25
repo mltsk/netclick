@@ -1,11 +1,14 @@
 const leftMenu = document.querySelector('.left-menu'),
     hamburger = document.querySelector('.hamburger');
 
+//Открытие/закрытие меню
 
 hamburger.addEventListener('click', ()=>{
     leftMenu.classList.toggle('openMenu');
     hamburger.classList.toggle('open');
 });
+
+// закрытие меню вне .left-menu
 
 document.addEventListener('click', e=> {
     if(!e.target.closest('.left-menu')) {
@@ -13,6 +16,8 @@ document.addEventListener('click', e=> {
         hamburger.classList.remove('open');
     };
 });
+
+//Выпадающий список в меню
 
 leftMenu.addEventListener('click', e => {
     const target = e.target,
