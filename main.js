@@ -26,20 +26,25 @@ leftMenu.addEventListener('click', e => {
         };
 });
 
-let tvShows = document.querySelector('.tv-shows');
-    
-tvShows.addEventListener('mouseover', (event)=> {
-    let target = event.target;
-    let img = target.closest('img');
 
-    if (img) { 
-        let src = event.target.src;
-        event.target.src = event.target.dataset.backdrop;
-        event.target.dataset.backdrop = src;
-    } else {
-        let src = event.relatedTarget.dataset.backdrop;
-        event.relatedTarget.dataset.backdrop = event.relatedTarget.src;
-        event.relatedTarget.src = src;
-    }
+//Смена картинок
+
+let tvShowsImg = document.querySelectorAll('.tv-card__img');
     
+tvShowsImg.forEach(img => {
+
+    img.addEventListener('mouseover', (event)=> {
+        let src = img.src;
+        img.src = img.dataset.backdrop;
+        img.dataset.backdrop = src;
+    });
+    
+    img.addEventListener('mouseleave', (event)=> { 
+        let src = img.dataset.backdrop;
+        img.dataset.backdrop = img.src;
+        img.src = src;
+    });
+
 });
+
+
