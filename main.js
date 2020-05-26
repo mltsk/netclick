@@ -42,7 +42,7 @@ const renderCard = response => {
             } = item;
             console.log(backdrop);
         const posterIMG = poster ? IMG_URL + poster : 'img/no-poster.jpg';
-        const backdropIMG = poster ? IMG_URL + backdrop : 'img/no-poster.jpg';
+        const backdropIMG = poster ? IMG_URL + backdrop : '';
         const voteElem = vote != 0 ? `<span class="tv-card__vote">${vote}</span>` : '';    
 
         const card = document.createElement('li');
